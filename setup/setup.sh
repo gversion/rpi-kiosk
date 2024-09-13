@@ -1,10 +1,10 @@
 #!/bin/bash
 
-VAR_COUNTRY="DE"
-VAR_TIMEZONE="Europe/Berlin" # timedatectl list-timezones
-VAR_KEYMAP="de"
-VAR_LOCALE="de_DE.UTF-8 UTF-8" # /usr/share/i18n/SUPPORTED
-VAR_HOSTNAME="raspikiosk"
+VAR_COUNTRY="UK"
+VAR_TIMEZONE="Europe/London" # timedatectl list-timezones
+VAR_KEYMAP="uk"
+VAR_LOCALE="uk_UK.UTF-8 UTF-8" # /usr/share/i18n/SUPPORTED
+VAR_HOSTNAME="raspberrypi"
 
 # Check for root permissions
 if [ "$EUID" -ne 0 ]; then
@@ -14,7 +14,7 @@ fi
 
 cd "${BASH_SOURCE%/*}"
 
-TITLE="PI Kiosk Setup"
+TITLE="InterGate Kiosk Setup"
 
 function changeSettings () {
   VAR_COUNTRY="$(whiptail --inputbox "Which country do you live in?" --title "$TITLE" 8 60 "$VAR_COUNTRY" --nocancel 3>&1 1>&2 2>&3)"
